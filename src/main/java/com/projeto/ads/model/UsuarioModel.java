@@ -3,6 +3,8 @@ package com.projeto.ads.model;
 import com.projeto.ads.dto.UsuarioDto;
 import jakarta.persistence.*;
 
+import java.util.Date;
+
 @Entity
 @Table(name = "usuarios")
 public class UsuarioModel {
@@ -15,6 +17,16 @@ public class UsuarioModel {
 
     @Column(name = "senha")
     private String password;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name ="role_id")
+    private Role role;
+
+    @Temporal(TemporalType.DATE)
+    private Date dataNascimento;
+
+    @Column(name = "ativo")
+    private boolean ativo;
 
     public UsuarioModel() {
 
@@ -52,5 +64,14 @@ public class UsuarioModel {
 
     public void setSenha(String senha) {
         this.password = senha;
+    }
+
+    public Role getRole() {
+        return role;
+    }
+
+
+    public void setRole(Role role) {
+        this.role = role;
     }
 }

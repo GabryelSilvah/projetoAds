@@ -17,7 +17,7 @@ public class AuthController {
     }
 
     @PostMapping("/login")
-    public ModelAndView register() {
+    public ModelAndView register(UsuarioModel usuario) {
         ModelAndView mv = new ModelAndView("cadastro");
 
 
