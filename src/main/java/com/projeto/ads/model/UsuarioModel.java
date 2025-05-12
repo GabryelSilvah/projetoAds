@@ -14,15 +14,19 @@ public class UsuarioModel {
     private String userName;
 
     @Column(name = "senha")
-    private String senha;
+    private String password;
 
     public UsuarioModel() {
 
     }
 
+    public UsuarioModel(String userName, String password) {
+
+    }
+
     public UsuarioModel(UsuarioDto usuarioDto) {
         this.userName = usuarioDto.userName();
-        this.senha = usuarioDto.senha();
+        this.password = usuarioDto.senha();
     }
 
 
@@ -43,10 +47,10 @@ public class UsuarioModel {
     }
 
     public String getSenha() {
-        return senha;
+        return password;
     }
 
     public void setSenha(String senha) {
-        this.senha = senha;
+        this.password = senha;
     }
 }

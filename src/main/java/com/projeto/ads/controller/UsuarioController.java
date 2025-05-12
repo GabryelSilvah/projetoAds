@@ -14,17 +14,8 @@ public class UsuarioController {
     private UsuarioService serviceUser;
 
 
-    @PostMapping("/telaLogin")
-    public ModelAndView register(){
 
 
-
-
-        return new ModelAndView();
-    }
-
-    @GetMapping("/telaLogin")
-    public void exibir(){}
 
 
 }
