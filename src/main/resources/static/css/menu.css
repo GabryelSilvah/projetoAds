@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.menu ul {
+    width: 100vw;
+    height: 60px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: linear-gradient(120deg, rgb(0, 176, 138), rgb(0, 143, 195));
+    position: fixed;
+    top: 0;
+    right: 0;
+    box-shadow: 2px 2px 20px rgb(166, 166, 166);
+    list-style: none;
+}
+
+.menu ul a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2rem;
+    font-family: sans-serif;
+}
+
+body {
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main {
+    width: 80vw;
+    margin-top: 100px;
+}
+
+.titulo_padrao {
+    font-size: 2rem;
+    font-family: sans-serif;
+    margin: 20px 0;
+}
+
+/*  */
+
+.container_form{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.form_aluno {
+    width: 500px;
+    border-radius: 14px;
+    box-shadow: 2px 2px 20px rgba(78, 78, 78, 0.362);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.form_aluno label {
+    font-size: 1.2rem;
+    font-family: sans-serif;
+}
+
+.form_aluno input {
+    width: 100%;
+    padding: 5px;
+    border-radius: 15px;
+    font-size: 1.2rem;
+    font-family: sans-serif;
+    background-color: #f3f3f3b1;
+    border: 1.5px solid black;
+}
+
+.form_aluno button{
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: #00c17d;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.form_aluno select{
+    height: 40px;
+    font-size: 1.2rem;
+    font-family: sans-serif;
+}

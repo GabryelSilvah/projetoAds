@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./listaAlunos.css">
+    <link rel="stylesheet" href="./menu.css">
+    <title>Form Aluno</title>
+</head>
+
+<body>
+
+    <header>
+        <nav class="menu">
+            <ul>
+                <a href="./painel.html">
+                    <li>Painel</li>
+                </a>
+                <a href="">
+                    <li>Disciplinas</li>
+                </a>
+                <a href="">
+                    <li>Perfil</li>
+                </a>
+                <a href="">
+                    <li>Sair</li>
+                </a>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+
+        <h2 class="titulo_padrao">Cadastrar</h2>
+        <section class="container_form">
+
+            <form action="" method="POST" class="form_aluno">
+                <label for="">Nome:</label>
+                <input type="text" name="nome" placeholder="Digite aqui...">
+
+                <label for="">Email:</label>
+                <input type="text" name="email" placeholder="Digite aqui...">
+
+                <label for="">CPF:</label>
+                <input type="text" name="cpf" placeholder="Digite aqui...">
+
+                <label for="">Selecione o Curso:</label>
+                <select name="curso" id="">
+                    <option value="0">Selecionar</option>
+                </select>
+
+                <label for="">Selecione o Turno:</label>
+                <select name="turno" id="">
+                    <option value="0">Selecionar</option>
+                </select>
+
+                <button type="submit">Salvar</button>
+            </form>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>
