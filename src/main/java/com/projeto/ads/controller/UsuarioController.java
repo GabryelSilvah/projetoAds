@@ -12,19 +12,14 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class UsuarioController {
 
-    @Autowired
-    private UsuarioService serviceUser;
-
+    @GetMapping("/cadastrar")
+    public String form_cadastro() {
+        return "cadastro";
+    }
 
     @PostMapping("/cadastrar")
-    public void cadastrar(UsuarioModel usuario) {
-
+    public String salvar(UsuarioModel usuario) {
+        return "cadastro";
     }
-
-    @PostMapping("/alterar")
-    public void alterar(UsuarioModel usuario) {
-
-    }
-
 
 }

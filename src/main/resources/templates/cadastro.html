@@ -1,23 +1,35 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th=http://www.thymeleaf.org">
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/tela_login.css">
-    <title>Login</title>
+    <title>Cadastro</title>
 </head>
 <body>
 
-
     <main>
-        <form action="" th:object="@{Usuario}" method="post" class="form_login">
-            <label for="" >Usuário</label>
-            <input type="text" name="username" placeholder="Insira seu usuário..." th:field="*{username}">
-            <label for="">Senha</label>
-            <input type="password" name="password" placeholder="Insira sua senha..." th:field="*{password}">
-            <button type="submit">Cadastrar</button>
-            <a href="" class="link_cadastro">Voltar</a>
+        <form  method="post" class="form_login">
+            <label for="" >Email:</label>
+            <input type="text" name="username" placeholder="Insira seu usuário..." >
 
+            <label for="">Data Nascimento:</label>
+            <input type="password" name="date" placeholder="Insira sua senha...">
+
+            <label for="">Senha</label>
+            <input type="password" name="password" placeholder="Insira sua senha...">
+
+            <label for="">Confirmar senha:</label>
+            <input type="password" name="confir_password" placeholder="Insira sua senha...">
+
+            <label for="">Role:</label>
+            <select name="role">
+                <option></option>
+
+            </select>
+
+            <button type="submit">Cadastrar</button>
+            <a th:href="@{telaLogin}" class="link_cadastro">Voltar</a>
         </form>
     </main>
     

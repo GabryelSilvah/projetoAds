@@ -7,20 +7,17 @@
     <title>Login</title>
 </head>
 <body>
+<main>
+    <form action="" method="post" class="form_login">
+        <label for="">Usuário</label>
+        <input type="text" name="username" placeholder="Insira seu usuário...">
 
+        <label for="">Senha</label>
+        <input type="password" name="password" placeholder="Insira sua senha...">
 
-    <main>
-        <form action="" method="post" th:object="${usuario}" th:action="@{/telaLogin}" class="form_login">
-            <label for="">Usuário</label>
-            <input type="text" name="username" th:field="*{username}"  placeholder="Insira seu usuário...">
-
-            <label for="">Senha</label>
-            <input type="password" name="password"  th:field="*{password}" placeholder="Insira sua senha...">
-
-            <button type="submit">Entrar</button>
-            <a href="" class="link_cadastro">Cadastrar-se</a>
-        </form>
-    </main>
-    
+        <button type="submit">Entrar</button>
+        <a th:href="@{cadastrar}" class="link_cadastro">Cadastrar-se</a>
+    </form>
+</main>
 </body>
 </html>

@@ -28,9 +28,10 @@ public class FilterSecurity {
                 .csrf(AbstractHttpConfigurer::disable)
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(authorized -> authorized
+                        .requestMatchers(HttpMethod.GET, "/telaLogin").permitAll()
                         .requestMatchers(HttpMethod.POST, "/telaLogin").permitAll()
-                        .requestMatchers( "/aluno/inserir").permitAll()
-                        .requestMatchers( "/aluno/listar").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/cadastrar").permitAll()
+                        .requestMatchers(HttpMethod.POST, "/cadastrar").permitAll()
                         .requestMatchers(HttpMethod.POST, "/user").permitAll()
                         .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                         .requestMatchers(
