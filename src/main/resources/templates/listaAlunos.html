@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
@@ -11,59 +11,73 @@
 
 <body>
 
-    <header>
-        <nav class="menu">
-            <ul>
-                <a href="./painel.html">
-                    <li>Painel</li>
-                </a>
-                <a href="">
-                    <li>Disciplinas</li>
-                </a>
-                <a href="">
-                    <li>Perfil</li>
-                </a>
-                <a href="">
-                    <li>Sair</li>
-                </a>
-            </ul>
-        </nav>
-    </header>
+<header>
+    <nav class="menu">
+        <ul>
+            <a href="./painel.html">
+                <li>Painel</li>
+            </a>
+            <a href="">
+                <li>Disciplinas</li>
+            </a>
+            <a href="">
+                <li>Perfil</li>
+            </a>
+            <a href="">
+                <li>Sair</li>
+            </a>
+        </ul>
+    </nav>
+</header>
 
-    <main>
+<main>
 
 
-        <h2 class="titulo_padrao">Lista de alunos</h2>
-        <section class="container_lista">
-            <button class="btn_padrao">Cadastrar Aluno</button>
-            <table class="tabela_alunos">
-                <tr>
-                    <th>ID</th>
-                    <th>Nome</th>
-                    <th>CPF</th>
-                    <th>Curso</th>
-                    <th>Matrícula</th>
-                    <th>Status</th>
-                    <th>Turno</th>
-                    <th>Editar</th>
-                    <th>Excluir</th>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>Gabriel</td>
-                    <td>345453</td>
-                    <td>ADS</td>
-                    <td>343454</td>
-                    <td>Ativo</td>
-                    <td>Matutino</td>
-                    <td><img src="./edit.png" class="img_opcao"></td>
-                    <td><img src="./delete.png" class="img_opcao"></td>
+    <h2 class="titulo_padrao">Lista de alunos</h2>
+    <section class="container_lista">
+        <button class="btn_padrao">Cadastrar Aluno</button>
+        <table class="tabela_alunos">
+            <tr>
+                <th>Nome</th>
+                <th>CPF</th>
+                <th>Curso</th>
+                <th>Matrícula</th>
+                <th>Status</th>
+                <th>Turno</th>
+                <th>Editar</th>
+                <th>Excluir</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Gabriel</td>
+                <td>345453</td>
+                <td>ADS</td>
+                <td>343454</td>
+                <td>Ativo</td>
+                <td>Matutino</td>
+                <td><img src="./edit.png" class="img_opcao"></td>
+                <td><img src="./delete.png" class="img_opcao"></td>
 
-                </tr>
-            </table>
-        </section>
+            </tr>
 
-    </main>
+            <tr th:each="aluno : ${alunos}">
+                <td th:text="${aluno.nome}"></td>
+                <td th:text="${aluno.cpf}"></td>
+                <td th:text="${aluno.curso}"></td>
+                <td th:text="${aluno.matricula}"></td>
+                <td th:text="${aluno.status}"></td>
+                <td th:switch="${aluno.turno}">
+                    <span th:case="'M'">Matutino</span>
+                    <span th:case="'N'">Noturno</span>
+                </td>
+                <td><img src="./edit.png" class="img_opcao"></td>
+                <td><img src="./delete.png" class="img_opcao"></td>
+            </tr>
+
+        </table>
+    </section>
+
+</main>
 
 </body>
 

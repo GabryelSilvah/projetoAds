@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th=http://www.thymeleaf.org">
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,11 +10,13 @@
 
 
     <main>
-        <form action="" method="post" th:object="@{Usuario}" class="form_login">
+        <form action="" method="post" th:object="${usuario}" th:action="@{/telaLogin}" class="form_login">
             <label for="">Usuário</label>
-            <input type="text" name="username" placeholder="Insira seu usuário..." th:filed="*{username}">
+            <input type="text" name="username" th:field="*{username}"  placeholder="Insira seu usuário...">
+
             <label for="">Senha</label>
-            <input type="password" name="password" placeholder="Insira sua senha..." th:filed="*{password}">
+            <input type="password" name="password"  th:field="*{password}" placeholder="Insira sua senha...">
+
             <button type="submit">Entrar</button>
             <a href="" class="link_cadastro">Cadastrar-se</a>
         </form>

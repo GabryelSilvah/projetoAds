@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
@@ -11,57 +11,69 @@
 
 <body>
 
-    <header>
-        <nav class="menu">
-            <ul>
-                <a href="./painel.html">
-                    <li>Painel</li>
-                </a>
-                <a href="">
-                    <li>Disciplinas</li>
-                </a>
-                <a href="">
-                    <li>Perfil</li>
-                </a>
-                <a href="">
-                    <li>Sair</li>
-                </a>
-            </ul>
-        </nav>
-    </header>
+<header>
+    <nav class="menu">
+        <ul>
+            <a href="./painel.html">
+                <li>Painel</li>
+            </a>
+            <a href="">
+                <li>Disciplinas</li>
+            </a>
+            <a href="">
+                <li>Perfil</li>
+            </a>
+            <a href="">
+                <li>Sair</li>
+            </a>
+        </ul>
+    </nav>
+</header>
 
-    <main>
+<main>
 
 
-        <h2 class="titulo_padrao">Cadastrar</h2>
-        <section class="container_form">
+    <h2 class="titulo_padrao">Cadastrar</h2>
+    <section class="container_form">
 
-            <form action="" method="POST" class="form_aluno">
-                <label for="">Nome:</label>
-                <input type="text" name="nome" placeholder="Digite aqui...">
+        <form th:object="${aluno}" th:action="@{/aluno/inserir}" method="POST" class="form_aluno">
+            <label for="">Nome:</label>
+            <input type="text" name="nome" placeholder="Digite aqui..." th:field="*{nome}">
 
-                <label for="">Email:</label>
-                <input type="text" name="email" placeholder="Digite aqui...">
+            <label for="">Email:</label>
+            <input type="text" name="email" placeholder="Digite aqui..." th:field="*{email}">
 
-                <label for="">CPF:</label>
-                <input type="text" name="cpf" placeholder="Digite aqui...">
+            <label for="">CPF:</label>
+            <input type="text" name="cpf" placeholder="Digite aqui..." th:field="*{cpf}">
 
-                <label for="">Selecione o Curso:</label>
-                <select name="curso" id="">
-                    <option value="0">Selecionar</option>
-                </select>
+            <label for="">Selecione o Curso:</label>
+            <select name="curso" th:field="*{curso}">
+                <option th:each="curso : ${T(com.projeto.ads.Enum.Curso).values()}"
+                        th:value="${curso}"
+                        th:text="${curso}">
+                </option>
+            </select>
 
-                <label for="">Selecione o Turno:</label>
-                <select name="turno" id="">
-                    <option value="0">Selecionar</option>
-                </select>
+            <label for="">Selecione o Status:</label>
+            <select name="status" th:field="*{status}">
+                <option th:each="status : ${T(com.projeto.ads.Enum.Status).values()}"
+                        th:value="${status}"
+                        th:text="${status}">
+                </option>
+            </select>
 
-                <button type="submit">Salvar</button>
-            </form>
+            <label for="">Selecione o Turno:</label>
+            <select name="turno" id="" th:field="*{turno}">
+                <option th:value="M" th:text="Matutino"></option>
+                <option th:value="N" th:text="Noturno"></option>
+            </select>
 
-        </section>
+            <button type="submit">Salvar</button>
+        </form>
 
-    </main>
+    </section>
+
+</main>
 
 </body>
 

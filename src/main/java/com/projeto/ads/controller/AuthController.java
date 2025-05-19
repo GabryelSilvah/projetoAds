@@ -9,15 +9,16 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class AuthController {
 
-    @GetMapping("/login")
-    public ModelAndView exibir() {
-        ModelAndView mv = new ModelAndView("telaLogin");
-        mv.addObject("Usuario", new UsuarioModel());
+    @GetMapping("/telaLogin")
+    public ModelAndView exibir_form() {
+        ModelAndView mv = new ModelAndView();
+        mv.addObject("usuario", new UsuarioModel());
+        mv.setViewName("telaLogin");
         return mv;
     }
 
-    @PostMapping("/login")
-    public ModelAndView register(UsuarioModel usuario) {
+    @PostMapping("/telaLogin")
+    public ModelAndView autenticar(UsuarioModel usuario) {
         ModelAndView mv = new ModelAndView("cadastro");
 
 
